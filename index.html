@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CAPSULE: DOOMSDAY — The Last Signal</title>
+<style>
+:root{color-scheme:dark;--bg:#080c14;--panel:#101a2a;--panel-light:#19273b;--text:#f2f6ff;--muted:#aabbd0;--line:#30415a;--mint:#8df2cb;--orange:#fbd390;--red:#ff989d}*{box-sizing:border-box}body{margin:0;min-height:100vh;font:16px/1.55 system-ui,Segoe UI,sans-serif;background:radial-gradient(ellipse 60% 40% at 75% -8%,#27445a 0%,transparent 92%),radial-gradient(ellipse 52% 40% at -15% 20%,#1b2b44 0%,transparent 90%),var(--bg);color:var(--text)}main{max-width:1060px;margin:0 auto;padding:24px 20px 70px}header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 0 26px;border-bottom:1px solid var(--line)}.brand{font-size:25px;font-weight:950;letter-spacing:-.07em}.brand span{color:var(--mint)}.eyebrow{font-size:12px;letter-spacing:.21em;text-transform:uppercase;color:var(--mint);font-weight:850}.pill{display:inline-flex;align-items:center;gap:9px;border:1px solid #486078;background:#1a3040;border-radius:99px;padding:7px 13px;font-weight:800;letter-spacing:.07em;font-size:12px}.dot{width:7px;height:7px;background:var(--mint);border-radius:99px;box-shadow:0 0 12px var(--mint)}.hero{padding:60px 0 29px;max-width:790px}h1{font-size:clamp(40px,8vw,82px);line-height:1.03;letter-spacing:-.065em;margin:14px 0 18px;font-weight:950}.hero h1 em{color:var(--mint);font-style:normal}.hero p{font-size:clamp(16px,2.4vw,20px);color:var(--muted);max-width:650px;margin:0}.panel{background:linear-gradient(145deg,#142035,#101827);border:1px solid var(--line);border-radius:20px;padding:27px;margin-top:20px;box-shadow:0 20px 60px #0003}.panel.primary{border-color:#49736b;box-shadow:0 0 0 1px #1b3934,0 20px 55px #0004}.row{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}.grid{display:grid;grid-template-columns:1.6fr 1fr;gap:20px}.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.step{border:1px solid var(--line);background:#122031;border-radius:14px;padding:16px}.step strong{display:block;color:var(--mint);font-size:13px}.step span{font-size:13px;color:var(--muted)}h2{font-size:24px;letter-spacing:-.04em;margin:0 0 9px}p{margin:8px 0 16px}.muted{color:var(--muted)}.small{font-size:13px}.big-number{font-size:34px;font-weight:900;color:var(--mint)}input,textarea,button{font:inherit}input,textarea{width:100%;background:#091321;color:white;border:1px solid #53647b;border-radius:11px;padding:15px;outline:none}input:focus,textarea:focus{border-color:var(--mint);box-shadow:0 0 0 3px #8df2cb24}textarea{min-height:146px;resize:vertical}button{padding:13px 20px;background:var(--mint);border:0;border-radius:10px;color:#0a211c;font-weight:850;cursor:pointer}button.secondary{background:#2a3a51;color:#f4f6ff}button:disabled{opacity:.5;cursor:not-allowed}form{display:grid;gap:13px}.hidden{display:none!important}.timer{font-variant-numeric:tabular-nums;color:var(--orange);font-size:24px;font-weight:850}.error{color:var(--red)}.feedback{padding:16px;background:#1b2d40;border-left:3px solid var(--mint);border-radius:7px;margin:11px 0;white-space:pre-wrap}.progress-track{height:6px;border-radius:99px;background:#2a3d51;overflow:hidden;margin-top:18px}.progress-fill{height:100%;background:linear-gradient(90deg,#47cfa9,#dcfcd8);transition:width .5s}ol{padding-left:23px;margin-top:12px}li{padding:8px 0;border-bottom:1px solid #263a4b;font-size:14px}.tag{font-size:12px;color:var(--orange);letter-spacing:.12em;font-weight:800}.light{color:var(--mint)}#lobby-count{font-weight:750;color:var(--mint)}.footer{border-top:1px solid var(--line);margin-top:36px;padding-top:20px;color:var(--muted);font-size:13px}.quick-help{border:1px solid #355a5a;background:#122d32;padding:13px 15px;border-radius:12px;margin:15px 0;font-size:14px}@media(max-width:720px){.grid,.steps{grid-template-columns:1fr}.hero{padding-top:40px}.panel{padding:19px}.brand{font-size:22px}}
+.case-file{border:1px solid #36576b;background:#0c1727;border-radius:15px;padding:19px;margin:21px 0}.case-file>p{line-height:1.7;color:#e0ebf6;margin:12px 0}.section-label{margin:20px 0 10px;font-size:12px;letter-spacing:.15em;font-weight:850;color:#a7c4db}.suspects{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}.suspect{border:1px solid #344b62;border-radius:9px;background:#132438;padding:11px}.suspect strong{display:block;font-size:13px}.suspect span{color:var(--muted);font-size:12px}.evidence-list{display:grid;gap:8px}.evidence-row{display:flex;gap:15px;justify-content:space-between;align-items:flex-start;padding:12px 14px;background:#15263a;border:1px solid #33495d;border-radius:10px;font-size:14px}.evidence-row strong{min-width:115px;max-width:42%;color:#a5e6d0}.evidence-row span{text-align:right;overflow-wrap:anywhere}.mission-box{padding:14px 16px;background:#17352f;border:1px solid #4a8370;border-radius:11px;margin-top:21px}.mission-box p{margin:6px 0 0;color:#f4fff8;font-weight:650}.reveal-conclusion{padding:12px 14px;border-left:3px solid var(--mint);color:#f2fff9;background:#17342e;border-radius:6px;margin-top:13px}@media(max-width:480px){.evidence-row{display:block}.evidence-row strong{display:block;max-width:none;margin-bottom:6px}.evidence-row span{text-align:left;display:block}}
+
+/* Fast rounds: make brief + evidence + prompt visible without scrolling past a giant hero. */
+body.game-active .hero,body.game-active .steps{display:none}
+body.game-active main{padding-top:8px}
+body.game-active header{padding:6px 0 10px}
+body.game-active .grid{display:block}
+body.game-active .grid>div:last-child{display:none}
+body.game-active .panel.primary{margin-top:12px;padding:16px 20px}
+body.game-active .case-file{padding:12px 14px;margin:12px 0}
+body.game-active .case-file>p{margin:4px 0;line-height:1.4}
+body.game-active .section-label{margin:9px 0 6px}
+body.game-active .evidence-list{gap:5px}
+body.game-active .evidence-row{padding:6px 10px;font-size:13px}
+body.game-active .mission-box{margin-top:9px;padding:9px 12px}
+body.game-active .mission-box p{margin:2px 0}
+body.game-active .quick-help{margin:8px 0;padding:8px 12px}
+body.game-active textarea{min-height:78px;padding:10px}
+body.game-active .timer{font-size:30px}
+body.game-active .panel h2{margin-bottom:0}
+body.game-active .footer{display:none}
+body.game-active .progress-track{margin-top:8px}
+@media(max-width:480px){body.game-active .panel.primary{padding:11px}body.game-active .case-file{padding:9px}body.game-active .evidence-row{display:flex}body.game-active .evidence-row strong{min-width:100px;max-width:50%;margin:0}body.game-active .evidence-row span{text-align:right}body.game-active .timer{font-size:26px}}
+
+/* CINEMATIC LOBBY / shown only before the first round */
+body.lobby-mode .hero,body.lobby-mode .steps{display:none}
+body.lobby-mode .grid{display:block}
+body.lobby-mode .grid>div:last-child{display:none}
+body.lobby-mode .lobby-panel{padding:0;overflow:hidden;margin-top:22px;border-color:#456e68}
+.lobby-cover{position:relative;overflow:hidden;min-height:440px;display:flex;flex-direction:column;justify-content:space-between;padding:28px 38px 22px;background:radial-gradient(circle at 86% 12%,#677a9f55,transparent 29%),radial-gradient(ellipse at 82% 58%,#b46b4938 0%,#6a385318 27%,transparent 57%),linear-gradient(115deg,#091325 12%,#152b42 65%,#131827 100%);border-bottom:1px solid #40536e}
+.lobby-cover::before{content:"";position:absolute;width:430px;height:430px;right:8%;top:4%;border:1px solid #c4d8e025;border-radius:50%;box-shadow:0 0 0 36px #dde9f207,0 0 0 98px #d7e7fc07,0 0 0 163px #dbe8ee04;pointer-events:none}
+.lobby-cover::after{content:"";position:absolute;inset:0;opacity:.1;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0,transparent 3px,#a3bcd0 4px)}
+.cover-topline,.cover-bottom{z-index:1;display:flex;justify-content:space-between;align-items:center;gap:15px;font-size:11px;font-weight:900;letter-spacing:.13em;color:#a8c7d7;flex-wrap:wrap}
+.cover-led{width:8px;height:8px;background:#ff8d8d;border-radius:50%;display:inline-block;box-shadow:0 0 15px #ff6868}
+.cover-status{border:1px solid #a4c3cd77;padding:6px 10px;border-radius:5px;color:#e8f9ff}
+.cover-content{position:relative;z-index:1;padding:33px 0}
+.lobby-heading{font-size:clamp(48px,8.6vw,104px);letter-spacing:-.075em;line-height:.9;font-weight:950;margin:18px 0 11px;text-shadow:0 12px 30px #0008}
+.lobby-heading span{color:var(--mint)}
+.lobby-subtitle{font-size:clamp(16px,2.3vw,25px);color:#ebf3ff;letter-spacing:.32em;font-weight:900;margin:0 0 18px}
+.lobby-tagline{font-size:14px;letter-spacing:.17em;font-weight:700;color:#bdd5e6;line-height:1.8;margin:0}.lobby-tagline strong{color:var(--orange)}
+.lobby-prologue,.lobby-suspect-section,.lobby-instructions{padding:35px 39px;border-bottom:1px solid #293b50}
+.lobby-panel h3{font-size:clamp(24px,3.6vw,35px);line-height:1.15;letter-spacing:-.045em;margin:9px 0 17px;color:#fff}
+.lobby-prologue>p,.lobby-instructions>p{max-width:850px;line-height:1.8;color:#d6e4f0}
+.lobby-timeband{display:flex;align-items:center;gap:18px;margin:29px 0 26px;padding:24px;background:#0b1424;border:1px solid #3f536d;border-radius:15px}
+.lobby-timeband>div{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}.time-kicker{color:var(--mint);font-size:11px;letter-spacing:.15em;font-weight:900}.lobby-timeband strong{font-size:clamp(33px,5vw,55px);font-variant-numeric:tabular-nums;line-height:1.2}.lobby-timeband strong small{font-size:17px}.lobby-timeband div>span:last-child{color:var(--muted);font-size:13px}.time-divider{font-size:28px;color:var(--orange)}
+.lobby-suspect-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:23px 0}
+.lobby-suspect{background:#0c1828;border:1px solid #384e65;border-radius:15px;padding:20px;min-width:0;display:flex;flex-direction:column}
+.suspect-id{font-size:11px;color:var(--mint);font-weight:850;letter-spacing:.14em}
+.suspect-avatar{font-size:24px;font-weight:950;display:grid;place-items:center;width:58px;height:58px;border-radius:50%;border:1px solid #6c8e9d;color:#d2faee;background:#1a3343;margin:20px 0 15px}
+.lobby-suspect h4{font-size:17px;margin:0;line-height:1.25;letter-spacing:.02em}.suspect-title{font-size:13px;color:var(--orange);font-weight:700;margin:5px 0}.lobby-suspect p{font-size:13px;color:#b8cadb;line-height:1.6;flex:1}.suspect-status{font-size:10px;letter-spacing:.1em;color:#d4e5ef;border-top:1px solid #27384d;padding-top:12px;font-weight:850}
+.lobby-hook{border-left:3px solid var(--orange);padding-left:15px;font-size:16px;color:#d3dfeb}.lobby-hook strong{color:var(--orange)}
+.lobby-oracle{display:grid;grid-template-columns:65px minmax(0,1fr);gap:16px;background:linear-gradient(120deg,#122c31,#101d2f);padding:32px 39px;border-bottom:1px solid #37665e}.oracle-mark{font-size:50px;line-height:1;color:var(--mint)}.lobby-oracle p{color:#d5e8eb;line-height:1.75;max-width:800px}.oracle-formula{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-top:18px}.oracle-formula span{background:#203b41;border:1px solid #5a8d88;border-radius:7px;font-size:12px;letter-spacing:.06em;font-weight:850;color:#d6fff2;padding:7px 12px}.oracle-formula b{color:var(--mint)}
+.lobby-rules{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}.lobby-rules>div{background:#102238;border:1px solid #3d566b;border-radius:11px;padding:15px;display:flex;flex-direction:column;gap:2px}.lobby-rules strong{font-size:35px;color:var(--mint);line-height:1.15}.lobby-rules span{font-size:11px;letter-spacing:.08em;color:#b6cadd;font-weight:850}
+.lobby-await{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:32px 39px;background:#152c2d}.lobby-await h3{margin-bottom:9px}.lobby-await p{max-width:650px;color:#d3e9e6;margin-top:0}.lobby-count-line{font-size:13px;color:#b8d1d0}.lobby-count-line strong{font-size:21px;color:var(--mint);margin-right:5px}.lobby-await button{flex-shrink:0}.lobby-final{text-align:center;padding:24px 22px;font-size:12px;letter-spacing:.13em;color:#9fcbbd;font-weight:750;background:#0b161f}.lobby-final strong{color:var(--mint)}
+@media(max-width:760px){.lobby-cover{padding:22px;min-height:390px}.lobby-prologue,.lobby-suspect-section,.lobby-instructions,.lobby-oracle,.lobby-await{padding:24px 21px}.lobby-suspect-cards{grid-template-columns:1fr}.lobby-suspect{padding:14px}.suspect-avatar{margin:9px 0}.lobby-oracle{grid-template-columns:1fr}.oracle-mark{font-size:34px}.lobby-await{flex-direction:column;align-items:flex-start}.lobby-rules{gap:7px}.lobby-rules>div{padding:10px}.lobby-rules strong{font-size:26px}.lobby-rules span{font-size:10px}}
+@media(max-width:480px){.cover-status{display:none}.cover-bottom{font-size:9px}.lobby-cover{min-height:345px}.lobby-heading{font-size:54px}.lobby-subtitle{letter-spacing:.16em}.lobby-timeband{padding:14px;gap:7px}.lobby-timeband strong{font-size:32px}.lobby-timeband strong small{font-size:12px}.lobby-timeband div>span:last-child{font-size:11px}.time-kicker{font-size:9px}.lobby-rules{grid-template-columns:1fr}.lobby-rules>div{flex-direction:row;align-items:center;gap:17px}}
+</style></head><body><main>
+<header><div class="brand">CAPSULE<span>_</span></div><span class="pill"><span class="dot"></span><span id="top-status">STANDBY</span></span></header>
+<div class="hero"><div class="eyebrow">AI Fluency Workshop · Live Competition</div><h1>ASK BETTER.<br><em>GO FURTHER.</em></h1><p>Six major clues. One murderer. The clock starts when each challenge appears.</p></div>
+<div class="steps"><div class="step"><strong>01 / ANALYSE</strong><span>Review the incident briefing and evidence below.</span></div><div class="step"><strong>02 / PROMPT</strong><span>Ask for the right information in simple words.</span></div><div class="step"><strong>03 / ADVANCE</strong><span>Elimination after Rounds 3 and 5. Top 3 finalists after Round 6.</span></div></div>
+<div class="grid"><div>
+<section id="register-box" class="panel primary"><div class="eyebrow">Ready to investigate?</div><h2>Enter the arena</h2><p class="muted">Register once. Your progress stays on this browser.</p><form id="registration"><label class="small" for="name">Display name</label><input id="name" maxlength="48" required autocomplete="nickname" placeholder="Enter your name"><button type="submit">Join competition →</button></form><p id="register-error" class="error small"></p></section>
+<section id="lobby" class="panel primary lobby-panel hidden" aria-label="Pre-game mission briefing">
+ <div class="lobby-cover">
+  <div class="cover-topline"><span class="cover-led"></span> ECLIPSE-9 // INCOMING TRANSMISSION <span class="cover-status">CLASSIFIED BRIEFING</span></div>
+  <div class="cover-content"><div class="eyebrow">YEAR 2049 · EARTH DEFENCE NETWORK</div><h2 class="lobby-heading">CAPSULE:<br><span>DOOMSDAY</span></h2><p class="lobby-subtitle">THE LAST SIGNAL</p><p class="lobby-tagline">THREE SUSPECTS. THREE SECRETS.<br><strong>ONE MURDERER.</strong></p></div>
+  <div class="cover-bottom"><span>MISSION STATUS: CRITICAL</span><span>ORACLE // INVESTIGATION PENDING</span></div>
+ </div>
+ <div class="lobby-prologue">
+  <div class="eyebrow">01 / WHAT HAPPENED</div><h3>Humanity has one last chance.</h3>
+  <p>An enormous asteroid is approaching Earth. Humanity's final hope is <strong>AEGIS</strong> — an advanced planetary defence system built at the heavily secured <strong>ECLIPSE-9</strong> facility.</p>
+  <p>But just before the final launch window, something goes terribly wrong. AEGIS enters emergency lockdown. The system cannot launch. Critical records are missing.</p>
+  <p>Then, at <strong>9:40 PM</strong>, its lead scientist, <strong>Dr. Adrian Vale</strong>, is found murdered inside the control room.</p>
+  <div class="lobby-timeband"><div><span class="time-kicker">INCIDENT REPORTED</span><strong>9:40 <small>PM</small></strong><span>Dr. Vale discovered dead</span></div><span class="time-divider" aria-hidden="true">→</span><div><span class="time-kicker">FINAL LAUNCH WINDOW</span><strong>10:00 <small>PM</small></strong><span>Humanity's deadline</span></div></div>
+  <p>Someone inside the facility knows what happened. Three people were working in the nearby operations wing that evening. All three are under investigation.</p>
+ </div>
+ <div class="lobby-suspect-section"><div class="eyebrow">02 / PERSONS OF INTEREST</div><h3>Three suspects. No easy answers.</h3>
+  <div class="lobby-suspect-cards">
+   <article class="lobby-suspect"><div class="suspect-id">01 / SECURITY</div><div class="suspect-avatar" aria-hidden="true">EV</div><h4>ELIAS VOSS</h4><div class="suspect-title">Security Commander</div><p>Responsible for protecting ECLIPSE-9 and overseeing facility security.</p><span class="suspect-status">UNDER INVESTIGATION</span></article>
+   <article class="lobby-suspect"><div class="suspect-id">02 / SYSTEMS</div><div class="suspect-avatar" aria-hidden="true">NK</div><h4>NYRA KAPOOR</h4><div class="suspect-title">AI Engineer</div><p>Maintains AEGIS software and critical computer systems.</p><span class="suspect-status">UNDER INVESTIGATION</span></article>
+   <article class="lobby-suspect"><div class="suspect-id">03 / SCIENCE</div><div class="suspect-avatar" aria-hidden="true">MS</div><h4>DR. MIRA SEN</h4><div class="suspect-title">Deputy Scientist</div><p>Vale's closest scientific collaborator and a key member of the AEGIS project.</p><span class="suspect-status">UNDER INVESTIGATION</span></article>
+  </div>
+  <p class="lobby-hook">All three may have secrets. <strong>Which one is hiding a murder?</strong></p>
+ </div>
+ <div class="lobby-oracle"><div class="oracle-mark" aria-hidden="true">◈</div><div><div class="eyebrow">03 / MEET YOUR INVESTIGATIVE AI</div><h3>ORACLE is waiting for your commands.</h3><p>ORACLE can retrieve fragments of surviving security records, system logs, research files and communications. It will help uncover the truth — <strong>if you ask the right questions.</strong></p><p>Write a clear request that tells ORACLE what to investigate, using the context and details provided in each challenge.</p><div class="oracle-formula"><span>TASK</span><b>+</b><span>CONTEXT</span><b>+</b><span>USEFUL DETAILS</span></div></div></div>
+ <div class="lobby-instructions"><div class="eyebrow">04 / YOUR MISSION</div><h3>Six discoveries. One final truth.</h3>
+  <p>Investigate Dr. Vale's murder, uncover the secrets inside ECLIPSE-9, identify the person responsible and find out whether AEGIS can still be saved.</p>
+  <div class="lobby-rules"><div><strong>6</strong><span>INVESTIGATION ROUNDS</span></div><div><strong>1</strong><span>PROMPT PER ROUND</span></div><div><strong>2</strong><span>ELIMINATION CHECKPOINTS</span></div></div>
+  <p class="small muted">For each round, the new evidence, mission and prompt box appear together when the host starts the timer. Time limits are set by the host. Investigators advance after Rounds 3 and 5; the top 3 are selected after Round 6. There is no timer running during this opening briefing.</p>
+ </div>
+ <div class="lobby-await"><div><div class="eyebrow">REGISTRATION COMPLETE</div><h3>You're in. Await the signal.</h3><p>Read this briefing now. The first timed challenge will appear only when the host begins Round 1. Keep the page open.</p><span class="lobby-count-line"><strong id="lobby-count">—</strong> registered players</span></div><button class="secondary" id="lobby-refresh" type="button">Check status</button></div>
+ <div class="lobby-final">EARTH IS RUNNING OUT OF TIME. <strong>THE INVESTIGATION BEGINS ON THE HOST'S SIGNAL.</strong></div>
+</section>
+<section id="arena" class="panel primary hidden"><div class="row"><div><div class="eyebrow" id="round-number">ROUND —</div><h2 id="round-title">Current challenge</h2></div><div class="timer" id="timer">--:--</div></div><div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0"></div></div><section class="case-file" aria-label="Case file"><div class="eyebrow">CASE FILE / INFORMATION PROVIDED</div><p id="case-story"></p><div id="suspects-section" class="hidden"><div class="section-label">SUSPECTS</div><div id="suspect-list" class="suspects"></div></div><div class="section-label" id="evidence-title">AVAILABLE EVIDENCE</div><div id="evidence-list" class="evidence-list"></div><div class="mission-box"><div class="eyebrow">YOUR MISSION</div><p id="brief"></p></div></section><details id="evidence-board" class="quick-help hidden"><summary id="evidence-board-summary" style="cursor:pointer;font-weight:800">Evidence collected</summary><ul id="evidence-board-items" style="margin:9px 0 0;padding-left:19px"></ul></details><div class="quick-help" id="timer-tip"><strong>Timed challenge:</strong> read the mission and write one clear prompt. Short prompts are fine.</div><form id="prompt-form"><label for="prompt" class="small">Your prompt to ORACLE</label><textarea id="prompt" rows="3" minlength="3" maxlength="600" placeholder="What information should ORACLE check?"></textarea><div class="row"><span class="muted small" id="attempts">Attempts —</span><button id="submit" type="submit">Submit to ORACLE →</button></div></form><p id="draft-status" class="small muted" aria-live="polite">Draft autosaves as you type.</p><div id="history"></div><p class="small muted">Your draft is saved while you type and submitted automatically when time expires. You can still submit manually before the deadline.</p></section>
+<section id="reveal-panel" class="panel hidden"><div class="eyebrow">ORACLE / EVIDENCE UNLOCKED</div><h2 id="reveal-title">Recovered evidence</h2><div id="reveal-entries" class="evidence-list"></div><p id="reveal-conclusion" class="reveal-conclusion"></p></section>
+<section id="result-panel" class="panel hidden"><div class="eyebrow" id="result-label">Competition status</div><h2 id="result-title">Round update</h2><p class="muted" id="result-body"></p><button class="secondary" id="refresh">Refresh status</button></section>
+</div><div>
+<section class="panel"><div class="row"><h2>Leaderboard</h2><span class="pill">LIVE EVENT</span></div><p class="small muted">Scores from closed rounds only.</p><ol id="leaderboard"><li class="muted">Waiting for results…</li></ol><button id="lb-refresh" class="secondary">Refresh rankings</button></section>
+<section class="panel"><div class="eyebrow">Rules of engagement</div><h2>Stay in the game</h2><p class="muted small">Six timed rounds, one prompt each. Half advance after Rounds 3 and 5; the top 3 are selected after Round 6 based on accumulated scores. A missed prompt receives zero for that clue.</p></section>
+</div></div>
+<div class="footer">CAPSULE / AI FLUENCY · Don't share browser session tokens. The host controls round openings and eliminations.</div>
+</main><script>
+const $=id=>document.getElementById(id);
+let token=localStorage.getItem('capsule_token')||null, state=null, offset=0, lastRound=null;
+let draftTimer=null, draftSaveChain=Promise.resolve(), lastSavedValue='', lastQueuedValue='', autoRound=null, manualBusy=false, autoBusy=false;
+function show(id,on){$(id).classList.toggle('hidden',!on)}
+async function req(path,method='GET',body){const headers={'Content-Type':'application/json'};if(token)headers.Authorization='Bearer '+token;const r=await fetch(path,{method,headers,body:body?JSON.stringify(body):undefined});const j=await r.json().catch(()=>({detail:'Server error'}));if(!r.ok)throw Object.assign(new Error(j.detail||'Request failed'),{status:r.status});return j}
+function set(id,v){$(id).textContent=v}
+function feedback(message,error=false){const d=document.createElement('div');d.className='feedback'+(error?' error':'');d.textContent=message;$('history').prepend(d)}
+function canWrite(){return state&&state.status==='running'&&state.active&&state.round&&state.attempts_used<state.round.max_attempts&&!manualBusy&&!autoBusy}
+function remainingMs(){return state&&state.deadline?state.deadline*1000-Date.now()-offset:0}
+$('registration').onsubmit=async e=>{e.preventDefault();set('register-error','');try{const r=await req('/api/register','POST',{name:$('name').value});token=r.player_token;localStorage.setItem('capsule_token',token);await refresh()}catch(err){set('register-error',err.message)}};
+// Serialize writes to prevent a slower earlier autosave replacing a newer draft.
+function saveDraftSnapshot(snapshot,rid){
+ if(snapshot===lastQueuedValue)return draftSaveChain;
+ lastQueuedValue=snapshot;
+ draftSaveChain=draftSaveChain.catch(()=>{}).then(async()=>{
+  if(rid!==lastRound || !state || !state.active || state.status!=='running' || state.attempts_used>0)return;
+  if(snapshot===lastSavedValue)return;
+  try{await req('/api/draft','PUT',{prompt:snapshot});lastSavedValue=snapshot;set('draft-status','Draft saved · auto-submit at 00:00')}
+  catch(err){if(lastQueuedValue===snapshot)lastQueuedValue='';if(err.status!==409&&err.status!==403) set('draft-status','Draft sync interrupted. Keep this page open; submit manually if possible.')}
+ });
+ return draftSaveChain;
+}
+function flushDraft(){
+ clearTimeout(draftTimer);draftTimer=null;
+ if(!canWrite())return draftSaveChain;
+ const snapshot=$('prompt').value, rid=lastRound;
+ return saveDraftSnapshot(snapshot,rid);
+}
+$('prompt').addEventListener('input',()=>{
+ if(!canWrite())return;
+ set('draft-status','Saving draft…');clearTimeout(draftTimer);
+ const rid=lastRound;
+ draftTimer=setTimeout(()=>{if(rid===lastRound)flushDraft()},remainingMs()<2300?0:350);
+});
+$('prompt-form').onsubmit=async e=>{
+ e.preventDefault();if(!canWrite()||remainingMs()<=0)return;
+ const input=$('prompt').value.trim();if(input.length<3){set('draft-status','Enter at least 3 characters.');return}
+ manualBusy=true;clearTimeout(draftTimer);$('submit').disabled=true;set('submit','Evaluating…');
+ try{const r=await req('/api/submit','POST',{prompt:input});feedback(`SCORE: ${r.score}/100\n${r.feedback}\n\nYour prompt: ${input}`);$('prompt').value='';set('draft-status','Prompt submitted.');await refresh()}
+ catch(err){feedback(err.message,true);set('draft-status','Submission failed. If the draft was saved, the host can still auto-submit it at round close.');}
+ finally{manualBusy=false;await refresh()}
+};
+async function autoSubmitAtDeadline(){
+ if(!canWrite() || autoRound===lastRound || remainingMs()>0)return;
+ autoRound=lastRound;autoBusy=true;clearTimeout(draftTimer);
+ $('prompt').disabled=true;$('submit').disabled=true;set('submit','Auto-submitting…');set('draft-status','Time up · submitting saved draft to ORACLE…');
+ await draftSaveChain.catch(()=>{});
+ try{
+  const r=await req('/api/submit-draft','POST');
+  feedback(`AUTO-SUBMITTED · SCORE: ${r.score}/100\n${r.feedback}`);
+  set('draft-status','Saved draft submitted successfully.');$('prompt').value='';
+ }catch(err){
+  if(err.status===409){set('draft-status','No eligible draft to auto-submit, or prompt already submitted.');}
+  else{set('draft-status','Connection issue: the host will finalize saved drafts before closing this round.');}
+ }finally{autoBusy=false;await refresh()}
+}
+function rowsInto(target,items){
+ const root=$(target);root.replaceChildren();for(const item of items||[]){const row=document.createElement('div');row.className='evidence-row';const label=document.createElement('strong');label.textContent=item.label||'';const value=document.createElement('span');value.textContent=item.value||'';row.append(label,value);root.append(row)}
+}
+function renderCaseFile(round){
+ set('case-story',round.story||round.brief||'');
+ const suspects=round.suspects||[];show('suspects-section',suspects.length>0);
+ $('suspect-list').replaceChildren();for(const s of suspects){const card=document.createElement('div');card.className='suspect';const name=document.createElement('strong');name.textContent=s.name;const role=document.createElement('span');role.textContent=s.role;card.append(name,role);$('suspect-list').append(card)}
+ set('evidence-title',round.clue_title||'AVAILABLE EVIDENCE');rowsInto('evidence-list',round.clues||[]);
+ set('brief',round.mission||round.brief||'');
+}
+function renderEvidenceBoard(s){const past=s.previous_rounds||[];show('evidence-board',past.length>0);set('evidence-board-summary',`Case memory · ${past.length} / ${s.round_count} unlocked`);const root=$('evidence-board-items');root.replaceChildren();for(const [i,x] of past.entries()){const li=document.createElement('li');const r=x.reveal||{};li.textContent=`${i+1}. ${r.short||r.conclusion||r.title||'Recovered clue'}`;root.append(li)}}
+function renderReveals(s){
+ const past=s.previous_rounds||[];if(!past.length){show('reveal-panel',false);return}
+ const latest=past.at(-1);const reveal=latest.reveal||{};
+ if(!reveal.title&&!reveal.conclusion){show('reveal-panel',false);return}
+ show('reveal-panel',true);set('reveal-title',reveal.title||'Recovered evidence');rowsInto('reveal-entries',reveal.entries||[]);set('reveal-conclusion',reveal.conclusion||'');
+}
+
+// Evidence board remains available during teaching breaks and to spectators.
+$('arena').insertAdjacentElement('afterend',$('evidence-board'));
+async function refresh(){
+ if(!token){document.body.classList.remove('game-active','lobby-mode');show('register-box',true);show('lobby',false);show('arena',false);show('result-panel',false);show('reveal-panel',false);show('evidence-board',false);return}
+ try{
+  const s=await req('/api/state');state=s;offset=s.server_time*1000-Date.now();
+  const running=s.status==='running',active=running&&s.active,waiting=s.status==='waiting'&&s.active,intermission=s.status==='intermission'&&s.active;
+  document.body.classList.toggle('game-active',running);document.body.classList.toggle('lobby-mode',waiting);
+  show('register-box',false);show('arena',running);show('lobby',waiting);
+  show('result-panel',!waiting&&(!running||!s.active));set('top-status',s.status.toUpperCase());
+  set('lobby-count',s.registered_players);renderEvidenceBoard(s);renderReveals(s);
+  if(running&&s.round){
+   const rid=s.round.id+'@'+String(s.opened_at||'');
+   if(lastRound!==rid){
+    $('history').replaceChildren();$('prompt').value='';lastRound=rid;autoRound=null;lastSavedValue='';lastQueuedValue='';
+    clearTimeout(draftTimer);draftTimer=null;draftSaveChain=Promise.resolve();
+    if(active)setTimeout(()=>$('arena').scrollIntoView({block:'start',behavior:'instant'}),0);
+   }
+   set('round-number',`ROUND ${s.round_index+1} / ${s.round_count} · ${s.round.act||'ORACLE'}`);
+   set('round-title',s.round.title);renderCaseFile(s.round);
+   $('progress-fill').style.width=`${s.round_index/s.round_count*100}%`;
+   set('timer-tip',`${s.active_round_duration_seconds||30} seconds total: read the case file and submit one prompt. Drafts save automatically.`);
+   show('prompt-form',active);show('timer-tip',active);show('history',active);show('draft-status',active);
+   if(active){
+    set('attempts',`Submissions: ${s.attempts_used} / ${s.round.max_attempts}`);
+    if(s.saved_draft&&!$('prompt').value&&!manualBusy&&!autoBusy){$('prompt').value=s.saved_draft;lastSavedValue=s.saved_draft;}
+    const disabled=s.attempts_used>=s.round.max_attempts || remainingMs()<=0||manualBusy||autoBusy;
+    $('prompt').disabled=disabled;$('submit').disabled=disabled;
+    set('submit',disabled?(s.attempts_used?'Submitted':remainingMs()<=0?'Time is up':'Evaluating…'):'Submit to ORACLE →');
+   }
+   tick();
+   if(!s.active){
+    set('result-label','ORACLE / SPECTATOR MODE');set('result-title','You can still follow the mystery');
+    set('result-body','You have been eliminated, but every new round and recovered clue remains visible. Prompt submissions are disabled.');
+   }
+  }else if(!s.active){
+   set('result-label','ORACLE / SPECTATOR MODE');set('result-title','You can still follow the mystery');
+   set('result-body','You have been eliminated. Stay here for the next clue and final reveal; prompt submissions remain disabled.');
+  }else if(intermission){
+   set('result-label','ORACLE / INTERMISSION');set('result-title','Clue recovered. Next challenge soon.');
+   set('result-body',`The host will explain this clue, then launch Round ${s.next_round_number} with its configured timer.`);
+  }else{
+   set('result-label','GAME COMPLETE');set('result-title','Investigation complete');
+   set('result-body','All rounds have ended. Check the leaderboard for the top investigators.');
+  }
+ }catch(err){if(err.status===401){localStorage.removeItem('capsule_token');token=null;state=null;document.body.classList.remove('game-active','lobby-mode');show('register-box',true);show('lobby',false);show('arena',false);show('result-panel',false);show('reveal-panel',false);set('register-error','Session expired. Please register again if registration is open.')}else console.warn('Status refresh:',err.message)}
+}
+function tick(){
+ if(!state||state.status!=='running'||!state.deadline)return;
+ const ms=Math.max(0,remainingMs());const seconds=Math.ceil(ms/1000);
+ set('timer',`${String(Math.floor(seconds/60)).padStart(2,'0')}:${String(seconds%60).padStart(2,'0')}`);
+ if(!state.active)return;
+ if(ms>0&&ms<=2000&&$('prompt').value!==lastSavedValue&&!manualBusy)flushDraft();
+ if(ms<=0){$('prompt').disabled=true;$('submit').disabled=true;set('submit','Time is up');autoSubmitAtDeadline()}
+}
+async function leaderboard(){try{const data=await req('/api/leaderboard');$('leaderboard').replaceChildren();if(!data.players.length){const li=document.createElement('li');li.textContent='No rounds completed yet.';$('leaderboard').appendChild(li)}data.players.forEach(p=>{const li=document.createElement('li');li.textContent=`${p.name} · ${p.total_score} pts · ${p.active?'ACTIVE':'ELIMINATED'}`;$('leaderboard').appendChild(li)})}catch(err){console.warn('Leaderboard:',err.message)}}
+$('refresh').onclick=refresh;$('lobby-refresh').onclick=refresh;$('lb-refresh').onclick=leaderboard;
+refresh();leaderboard();setInterval(tick,250);setInterval(refresh,2000);setInterval(leaderboard,10000);
+</script></body></html>
